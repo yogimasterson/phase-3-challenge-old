@@ -10,15 +10,18 @@ app.get('/zero', function (req, res) {
 })
 
 app.get('/add', function (req, res) {
-  res.send('Hello Zero World!')
+  let answer = parseInt(req.query.a) + parseInt(req.query.b);
+  res.send(answer.toString())
 })
 
 app.get('/subtract', function (req, res) {
-  res.send('Hello Zero World!')
+  let answer = parseInt(req.query.a) - parseInt(req.query.b);
+  res.send(answer.toString())
 })
 
-app.get('/double', function (req, res) {
-  res.send('Hello Zero World!')
+app.get('/double/:number', function (req, res) {
+  let answer = parseInt(req.params.number) * 2
+  res.send(answer.toString())
 })
 
 app.listen(3000, function () {
