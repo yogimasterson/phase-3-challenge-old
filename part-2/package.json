@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules/.bin/mocha database_test.js",
     "create-db": "psql < schema.sql",
     "load-data": "psql < load-data.sql"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "express": "^4.15.3",
     "node": "0.0.0",
     "pg-promise": "^5.9.3",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "chai": "^4.0.2",
+    "expect.js": "^0.3.1",
     "mocha": "^3.4.2"
   }
 }

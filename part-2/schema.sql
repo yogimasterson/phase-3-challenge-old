@@ -13,15 +13,14 @@ CREATE TABLE grocery_items(
 
 DROP TABLE IF EXISTS shoppers;
 CREATE TABLE shoppers(
-	id SERIAL PRIMARY KEY,
-	first_name VARCHAR(40) NOT NULL,
-	last_name VARCHAR(40) NOT NULL
+	id int PRIMARY KEY,
+	first_name VARCHAR(40) NOT NULL
 );
 
 DROP TABLE IF EXISTS orders;
 CREATE TABLE orders(
-	id SERIAL PRIMARY KEY,
+	order_id int,
+	order_date DATE,
 	name VARCHAR(40) NOT NULL,
 	section VARCHAR(40) NOT NULL
 );
-
