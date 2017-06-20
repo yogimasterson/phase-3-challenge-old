@@ -14,7 +14,6 @@ function allItems () {
 
 function itemsInSection(section) {
     db.any('SELECT id, name FROM grocery_items WHERE section = $1', section)
-    .then(console.log)
 }
 
 function cheapItems() {
@@ -37,4 +36,13 @@ function orderTotal(id) {
     db.any('SELECT SUM(price) FROM grocery_items LEFT JOIN orders on grocery_items.name = orders.name WHERE order_id = $1', id)
 }
 
-itemsInSection('bulk')
+
+module.exports = {
+	allItems,
+	itemsInSection,
+	cheapItems,
+	countItemsInSection,
+	mostRecentOrders,
+	lastShopperName,
+	orderTotal
+}
