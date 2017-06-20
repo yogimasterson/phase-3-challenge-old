@@ -9,10 +9,14 @@ const orange_juice_button = document.getElementById("orange-juice-button")
 const ice_cream_button = document.getElementById("ice-cream-button")
 const pizza_button = document.getElementById("pizza-button")
 const clear_button = document.getElementById("clear-button")
+const elem = document.getElementById('my-list');
 
 clear_button.addEventListener("click", function() {
     cart_item_count.innerHTML = '0'
     shoppingCart = []
+    while (elem.firstChild) {
+    elem.removeChild(elem.firstChild);
+}
 })
 
 if (!shoppingCart) {
@@ -22,6 +26,7 @@ if (!shoppingCart) {
 }
 
 cart_button.addEventListener("click", function() {
+    createShoppingList(shoppingCart)
 	console.log(shoppingCart)
 })
 
@@ -61,20 +66,14 @@ pizza_button.addEventListener("click", function() {
 })
 
 function createShoppingList(array) {
-  let div = document.getElementById('myList');
-  let ul = document.createElement('ul');
+  let ul = document.getElementById('my-list')
 
   for (let i = 0; i < array.length; i++) {
-    let li = document.createElement('li');
-      
-    li.appendChild(document.createTextNode(array[i]));
-    console.log(ul.appendChild(li));
-    
-    div.appendChild(ul);
+    let li = document.createElement('li')
+    li.appendChild(document.createTextNode(array[i]))
+    ul.appendChild(li)
   }
 }
-
-createShoppingList(shoppingCart);
 
 // Modal Code
 var modal = document.getElementById('myModal')
