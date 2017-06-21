@@ -18,6 +18,7 @@ clear_button.addEventListener("click", function () {
     total_amount.innerHTML = '0'
     cart_item_count.innerHTML = '0'
     shoppingCart = []
+    itemPrice = []
     while (elem.firstChild) {
         elem.removeChild(elem.firstChild);
     }
@@ -38,74 +39,82 @@ cart_button.addEventListener("click", function () {
 })
 
 onion_button.addEventListener("click", function () {
-    shoppingCart.push(["Onion", "$1.11"])
+    shoppingCart.push(["Onion", " $1.11"])
     itemPrice.push("1.11")
     cart_item_count.innerHTML = shoppingCart.length
 
-    total_amount.innerHTML = itemPrice.map(function (x) {
+    total_amount.innerHTML = roundNearest(itemPrice.map(function (x) {
         return parseFloat(x, 10)
-    }).reduce((a, b) => a + b, 0)
+    }).reduce((a, b) => a + b, 0), -100)
 })
 
 tomato_button.addEventListener("click", function () {
-    shoppingCart.push(["Tomato", "$1.56"])
+    shoppingCart.push(["Tomato", " $1.56"])
     itemPrice.push("1.56")
     cart_item_count.innerHTML = shoppingCart.length
 
-    total_amount.innerHTML = itemPrice.map(function (x) {
+    total_amount.innerHTML = roundNearest(itemPrice.map(function (x) {
         return parseFloat(x, 10)
-    }).reduce((a, b) => a + b, 0)
+    }).reduce((a, b) => a + b, 0), -100)
 })
 
 carrot_button.addEventListener("click", function () {
-    shoppingCart.push(["Carrots", "$2.88"])
+    shoppingCart.push(["Carrots", " $2.88"])
     itemPrice.push("2.88")
     cart_item_count.innerHTML = shoppingCart.length
 
-    total_amount.innerHTML = itemPrice.map(function (x) {
+    total_amount.innerHTML = roundNearest(itemPrice.map(function (x) {
         return parseFloat(x, 10)
-    }).reduce((a, b) => a + b, 0)
+    }).reduce((a, b) => a + b, 0), -100)
 })
 
 cold_cut_button.addEventListener("click", function () {
-    shoppingCart.push(["Cold Cuts", "$1.47"])
+    shoppingCart.push(["Cold Cuts", " $1.47"])
     itemPrice.push("1.47")
     cart_item_count.innerHTML = shoppingCart.length
 
-    total_amount.innerHTML = itemPrice.map(function (x) {
+    total_amount.innerHTML = roundNearest(itemPrice.map(function (x) {
         return parseFloat(x, 10)
-    }).reduce((a, b) => a + b, 0)
+    }).reduce((a, b) => a + b, 0), -100)
 })
 
 orange_juice_button.addEventListener("click", function () {
-    shoppingCart.push(["Orange Juice", "$2.52"])
+    shoppingCart.push(["Orange Juice", " $2.52"])
     itemPrice.push("2.52")
     cart_item_count.innerHTML = shoppingCart.length
 
-    total_amount.innerHTML = itemPrice.map(function (x) {
+    total_amount.innerHTML = roundNearest(itemPrice.map(function (x) {
         return parseFloat(x, 10)
-    }).reduce((a, b) => a + b, 0)
+    }).reduce((a, b) => a + b, 0), -100)
 })
 
 ice_cream_button.addEventListener("click", function () {
-    shoppingCart.push(["Ice Cream", "$14.08"])
+    shoppingCart.push(["Ice Cream", " $14.08"])
     itemPrice.push("14.08")
     cart_item_count.innerHTML = shoppingCart.length
 
-    total_amount.innerHTML = itemPrice.map(function (x) {
+    total_amount.innerHTML = roundNearest(itemPrice.map(function (x) {
         return parseFloat(x, 10)
-    }).reduce((a, b) => a + b, 0)
+    }).reduce((a, b) => a + b, 0), -100)
 })
 
 pizza_button.addEventListener("click", function () {
-    shoppingCart.push(["Pizza", "$15.61"])
+    shoppingCart.push(["Pizza", " $16.61"])
     itemPrice.push("16.61")
     cart_item_count.innerHTML = shoppingCart.length
 
-    total_amount.innerHTML = itemPrice.map(function (x) {
+    total_amount.innerHTML = roundNearest(itemPrice.map(function (x) {
         return parseFloat(x, 10)
-    }).reduce((a, b) => a + b, 0)
+    }).reduce((a, b) => a + b, 0), -100)
 })
+
+function roundNearest(num, acc){
+    if ( acc < 0 ) {
+        return Math.round(num*acc)/acc;
+    } else {
+        return Math.round(num/acc)*acc;
+    }
+ }
 
 function createShoppingList(array) {
     while (elem.firstChild) {
