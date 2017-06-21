@@ -5,6 +5,24 @@ body {
   font-family: "Lucida Grande", "Helvetica", sans-serif;
 }
 
+.shopping-list {
+  display: inline-block;
+  display: inline;
+  zoom: 1
+}
+
+li {
+  display: block;
+  list-style-type: none;
+  padding: 6px;
+}
+
+h1:after {
+  content: ' ';
+  display: block;
+  border: 2px solid #a0a0a0;
+}
+
 /* LAYOUT UTILS */
 .flex {
   display: -webkit-flex;
@@ -150,5 +168,5 @@ body {
 }
 
 .myList {
-  
+
 }
