@@ -1,5 +1,7 @@
 \c grocery_store
 
+-- IMPORTANT!!! Once you clone repo, the csv path needs to be your direct path. I wasn't able to figure out a way to get around this. --
+
 COPY grocery_items (name, price, section) FROM '/Users/michaelmasterson/Desktop/LearnersGuild/phase-3-challenge/part-2/grocery.csv' DELIMITER ',' HEADER CSV;
 
 INSERT INTO shoppers (id, first_name)
