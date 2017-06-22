@@ -97,7 +97,7 @@ function roundNearest(num, acc){
     } else {
         return Math.round(num/acc)*acc;
     }
- }
+}
 
 function createShoppingList(array) {
     while (elem.firstChild) {
